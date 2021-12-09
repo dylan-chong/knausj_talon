@@ -3,7 +3,7 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+default_alphabet = "share bat cot drum each fine gust harp site jury crunch look made need odd paint quest red sun trap urge vent wake plex yes zeal".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -113,10 +113,11 @@ def letters(m) -> str:
 ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alt": "alt",  #'alter': 'alt',
-    "control": "ctrl",  #'troll':   'ctrl',
-    "shift": "shift",  #'sky':     'shift',
-    "super": "super",
+    'apple': 'cmd',
+    'con': 'ctrl',
+    'big': 'shift',
+    'alter': 'alt',
+    'mash mod': 'cmd-shift-ctrl',
 }
 if app.platform  == "mac":
     modifier_keys["command"] = "cmd"
@@ -156,15 +157,10 @@ punctuation_words = {
     "pound sign": "£",
 }
 symbol_key_words = {
-    "dot": ".",
     "point": ".",
-    "quote": "'",
-    "apostrophe": "'",
-    "L square": "[",
-    "left square": "[",
-    "square": "[",
-    "R square": "]",
-    "right square": "]",
+    "sing quote": "'",
+    "lacket": "[",
+    "racket": "]",
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
@@ -173,24 +169,19 @@ symbol_key_words = {
     "plus": "+",
     "tilde": "~",
     "bang": "!",
-    "down score": "_",
-    "under score": "_",
-    "paren": "(",
-    "L paren": "(",
+    "underscore": "_",
+    "push": "(",
     "left paren": "(",
-    "R paren": ")",
+    "pop": ")",
     "right paren": ")",
-    "brace": "{",
+    "lace": "{",
     "left brace": "{",
-    "R brace": "}",
+    "race": "}",
     "right brace": "}",
-    "angle": "<",
+    "langle": "<",
     "left angle": "<",
-    "less than": "<",
-    "rangle": ">",
-    "R angle": ">",
+    "wrangle": ">",
     "right angle": ">",
-    "greater than": ">",
     "star": "*",
     "hash": "#",
     "percent": "%",
@@ -198,7 +189,6 @@ symbol_key_words = {
     "amper": "&",
     "pipe": "|",
     "dubquote": '"',
-    "double quote": '"',
 
     # Currencies
     "dollar": "$",
@@ -247,5 +237,4 @@ ctx.lists["self.special_key"] = special_keys
 ctx.lists["self.function_key"] = {
     f"F {default_f_digits[i]}": f"f{i + 1}" for i in range(12)
 }
-
 
