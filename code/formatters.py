@@ -116,6 +116,10 @@ formatters_dict = {
         NOSEP,
         first_vs_rest(lambda w: w.lower(), lambda w: "_" + w.lower()),
     ),
+    "UPPER_SNAKE_CASE": (
+        NOSEP,
+        first_vs_rest(lambda w: w.lower(), lambda w: "_" + w.lower()),
+    ),
     "NO_SPACES": (NOSEP, every_word(lambda w: w)),
     "DASH_SEPARATED": words_with_joiner("-"),
     "TERMINAL_DASH_SEPARATED": (
@@ -145,21 +149,22 @@ formatters_dict = {
 
 # This is the mapping from spoken phrases to formatters
 formatters_words = {
-    "allcaps": formatters_dict["ALL_CAPS"],
-    "alldown": formatters_dict["ALL_LOWERCASE"],
+    "upper nat way": formatters_dict["ALL_CAPS"],
+    "nat way": formatters_dict["ALL_LOWERCASE"],
     "camel": formatters_dict["PRIVATE_CAMEL_CASE"],
-    "dotted": formatters_dict["DOT_SEPARATED"],
+    "dot way": formatters_dict["DOT_SEPARATED"],
     "dubstring": formatters_dict["DOUBLE_QUOTED_STRING"],
     "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
-    "hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
+    "proper": formatters_dict["PUBLIC_CAMEL_CASE"],
     "kebab": formatters_dict["DASH_SEPARATED"],
     "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
     "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
     # "say": formatters_dict["NOOP"],
     # "sentence": formatters_dict["CAPITALIZE_FIRST_WORD"],
-    "slasher": formatters_dict["SLASH_SEPARATED"],
+    "rel path": formatters_dict["SLASH_SEPARATED"],
     "smash": formatters_dict["NO_SPACES"],
-    "snake": formatters_dict["SNAKE_CASE"],
+    "score": formatters_dict["SNAKE_CASE"],
+    "upper-score": formatters_dict["UPPER_SNAKE_CASE"],
     # "speak": formatters_dict["NOOP"],
     "string": formatters_dict["SINGLE_QUOTED_STRING"],
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
@@ -298,7 +303,7 @@ def unformat_text(text: str) -> str:
 
 ctx.lists["self.formatters"] = formatters_words.keys()
 ctx.lists["self.prose_formatter"] = {
-    "say": "NOOP",
+    #  "say": "NOOP", # conflicts with seven, save
     "speak": "NOOP",
     "sentence": "CAPITALIZE_FIRST_WORD",
 }

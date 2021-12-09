@@ -3,7 +3,7 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "share bat cot drum each fine gust heap site jury crunch look made need odd paint quest red sun trap urge vent wake plex yes zeal".split(
+default_alphabet = "share bat cot drum each fine gust heap kite jury crunch look made need odd paint quest red sun trap urge vent wake plex yes zeal".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -171,17 +171,11 @@ symbol_key_words = {
     "bang": "!",
     "underscore": "_",
     "push": "(",
-    "left paren": "(",
     "pop": ")",
-    "right paren": ")",
     "lace": "{",
-    "left brace": "{",
     "race": "}",
-    "right brace": "}",
     "langle": "<",
-    "left angle": "<",
     "wrangle": ">",
-    "right angle": ">",
     "star": "*",
     "hash": "#",
     "percent": "%",
@@ -204,11 +198,11 @@ ctx.lists["self.arrow_key"] = {
     "down": "down",
     "left": "left",
     "right": "right",
-    "up": "up",
+    "gup": "up",
 }
 
 simple_keys = [
-    "end",
+    #  "end", # conflicts with enter
     "enter",
     "escape",
     "home",
