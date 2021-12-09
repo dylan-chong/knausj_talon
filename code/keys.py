@@ -3,7 +3,7 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "share bat cot drum each fine gust harp site jury crunch look made need odd paint quest red sun trap urge vent wake plex yes zeal".split(
+default_alphabet = "share bat cot drum each fine gust heap site jury crunch look made need odd paint quest red sun trap urge vent wake plex yes zeal".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
